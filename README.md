@@ -37,7 +37,7 @@ conda activate aiops-q4
 
 ## Q1 — Technical debt diagnosis
 
-Written answer only, in [`q1/aiops_q1.pdf`](q1/aiops_q1.pdf) (LaTeX source: `q1/aiops_q1.tex`).
+Written answer only, in [`q1/aiops_q1.pdf`](q1/aiops_q1.pdf).
 It maps (a) the rounding change that broke an unrelated feature to **boundary erosion /
 entanglement (CACE)**, (b) the unknown dashboard team to **undeclared consumers (visibility
 debt)**, and (c) the 14 undocumented shell scripts to **pipeline jungle**, then proposes
