@@ -1,0 +1,25 @@
+{
+  "run_id": "b0461ee06eca45c19b143b59268d0b33",
+  "seed": 42,
+  "git_commit": "06c519089bbd3586130f50784cf12110e2d3efed",
+  "dataset_md5": "342ecb5219278ec13194d5bb2b77518a",
+  "dataset_dvc_md5": "d3b391f5e30a5b6843e51f4d76e6d75b.dir",
+  "sklearn_version": "1.9.0",
+  "python_version": "3.13.14",
+  "tolerance": 0.005,
+  "params": {
+    "hidden_layer_sizes": [
+      128,
+      64
+    ],
+    "learning_rate_init": 0.001,
+    "batch_size": 128,
+    "max_iter": 20,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": 0.9751428571428571,
+    "f1_macro": 0.9749679104968969,
+    "train_accuracy": 0.9962142857142857
+  }
+}
