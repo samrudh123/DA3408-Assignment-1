@@ -1,3 +1,5 @@
 ml*
 rec*
 *.tex
+/data
+/file_list.csv
