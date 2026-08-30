@@ -7,7 +7,7 @@ Experiment management and reproducibility with **MLflow** and **DVC**.
 | Q1 | Technical-debt diagnosis (written) | [`q1/aiops_q1.pdf`](q1/aiops_q1.pdf) |
 | Q2 | MLflow experiment comparison | [`q2/Q2_Mlflow.ipynb`](q2/Q2_Mlflow.ipynb) |
 | Q3 | DVC data versioning & rollback | repo root (`data.dvc`, `file_list.csv.dvc`, tags `v1`/`v2`) |
-| Q4 | End-to-end reproducibility drill (capstone) | [`q4/question_4.ipynb`](q4/question_4.ipynb) |
+| Q4 | End-to-end reproducibility drill (capstone) | [`q4/question_4.ipynb`](q4/question_4.ipynb) — Partner A's repo: <https://github.com/samrudh123/q4> |
 
 Summary write-up: [`assignment1_report.pdf`](assignment1_report.pdf).
 Screenshots referenced below live in [`screenshots/`](screenshots/).
@@ -260,6 +260,23 @@ environment or the data. Partner A's work arrives here as the `q4/` subtree
 (`git subtree pull --prefix=q4 team main`); Partner B's side is the recording,
 `../q4_video.mp4`.
 
+**Partner A's repository: <https://github.com/samrudh123/q4>**
+
+The subtree merge grafts Partner A's tree into `q4/` here, so their individual Q4 commits are
+browsable in that repository rather than in this one's history. It is wired up as the `team`
+remote:
+
+```bash
+git remote add team https://github.com/samrudh123/q4.git
+git fetch team
+git log team/main --oneline                              # Partner A's commit history
+git show team/main:question_4.ipynb                      # a file at Partner A's commit
+
+# how q4/ got here, and how it is re-synced
+git subtree add  --prefix=q4 team main
+git subtree pull --prefix=q4 team main -m "sync partner work"
+```
+
 Everything for Q4 runs **inside `q4/`**, which is its own DVC project with an **S3** remote
 (`s3://aiops-dvcstore/q4`, `ap-south-1`) — separate from the SSH remote used by Q3.
 
@@ -346,7 +363,7 @@ MLflow run view: [`screenshots/q4_partnerb_results.jpeg`](screenshots/q4_partner
 │   ├── data/mnist_784.npz
 │   └── mlruns/, models/         # MLflow artifacts for the six runs
 ├── q3/q3_dvc_commands.sh        # earlier draft script; the procedure above is the one that ran
-├── q4/                          # Partner A's subtree — its own DVC project (S3 remote)
+├── q4/                          # subtree of github.com/samrudh123/q4 — own DVC project (S3)
 │   ├── question_4.ipynb
 │   ├── environment.yml          # the pinned spec Partner B recreates
 │   ├── data.dvc                 # committed with the code, in the same commit
