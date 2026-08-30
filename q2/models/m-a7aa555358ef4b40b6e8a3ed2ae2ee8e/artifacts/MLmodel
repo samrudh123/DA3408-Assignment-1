@@ -1,0 +1,24 @@
+artifact_path: /home/samrudh/IITM Courses/Sem 5/AI Operations Lab DA3408/Assignment-1/DA3408-Assignment-1/mlruns/1/models/m-a7aa555358ef4b40b6e8a3ed2ae2ee8e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.4
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types:
+    - sklearn.neural_network._stochastic_optimizers.AdamOptimizer
+mlflow_version: 3.15.1
+model_id: m-a7aa555358ef4b40b6e8a3ed2ae2ee8e
+model_size_bytes: 461931
+model_uuid: m-a7aa555358ef4b40b6e8a3ed2ae2ee8e
+prompts: null
+run_id: 94367eef116e4239bf6172cf98457ed8
+utc_time_created: '2026-08-30 17:31:48.048747'
